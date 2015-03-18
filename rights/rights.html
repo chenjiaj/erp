@@ -8,13 +8,21 @@
     <link rel="stylesheet" type="text/css" href="../common/css/fontello.css" />
     <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
     <style type="text/css">
-        .tableStyle td .refuse,.tableStyle td .refuse span{
-            color: red;
+        .form-div{
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
         }
-        #table-area .refuse-btn{
-           left: 160px;
-           background-color: red;
-       }
+        .form-div label{
+            margin-right: 14px;
+        }
+        .form-div select option{
+            color: #000;
+        }
+        #chart{
+            margin-top: 10px;
+            width: 70%;
+            height: 500px;
+        }
     </style>
 </head>
 
@@ -52,10 +60,10 @@
     <div class="siderbar">
         <ul class="siderbar-ul">
             <li class="has-more">
-                <a href="#"  class="active"><span class="icon-users"></span>用户管理</a>
-                <ul>
-                    <li><a href="user.html">用户列表</a></li>
-                    <li><a href="approval.html"  class="active">审批用户</a></li>
+                <a href="#"><span class="icon-users"></span>用户管理</a>
+                <ul class="hide">
+                    <li><a href="../user/user.html">用户列表</a></li>
+                    <li><a href="../user/approval.html">审批用户</a></li>
                 </ul>
             </li>
             <li>
@@ -65,7 +73,7 @@
                 <a href="../assess/assess.html"><span class="icon-pencil"></span>企业评价</a>
             </li>
             <li>
-                <a href="../rights/rights.html"><span class="icon-chart-bar"></span>所有者权益</a>
+                <a href="rights.html" class="active"><span class="icon-chart-bar"></span>所有者权益</a>
             </li>
         </ul>
     </div>
@@ -74,36 +82,43 @@
     <!--main-wrapper-->
     <div class="main-wrapper">
         <div class="main">
-            <ul class="tab">
-                <li class="active"><span class="line"></span>待审批</li>
-                <li><span class="line"></span>未通过</li>
-            </ul>
-            <div id="table-area" class="clear-fix">
-                <table class="tableStyle"  id="table">
-                    <tr>
-                        <th><label><input type="checkbox" class="checkall"/>全选</label></th>
-                        <th>用户名ID</th>
-                        <th>姓名</th>
-                        <th>专业</th>
-                        <th>班级</th>
-                        <th>学号</th>
-                        <th>操作</th>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"/></td>
-                        <td>wangmin</td>
-                        <td>王敏</td>
-                        <td>电子商务</td>
-                        <td>0361102</td>
-                        <td>2011211426</td>
-                        <td>
-                            <a href="#"class="agree"><span class="icon-ok-circled"></span>同意</a>
-                            <a href="#" class="refuse"><span class="icon-cancel-circled"></span>拒绝</a>
-                        </td>
-                    </tr>
-                </table>
-                <a href="#" class="form-control btn aggree-btn">同意</a>
-                <a href="#" class="form-control btn refuse-btn">拒绝</a>
+            <h1 class="content-title-style1">
+                <span class="icons-header2"></span>
+                所有者权利
+            </h1>
+            <form class="form-div">
+                <label>选择游戏组
+                    <select class="form-control">
+                        <option>haha</option>
+                        <option>hjk</option>
+                        <option>sss</option>
+                    </select>
+                </label>
+                <label>选择第
+                    <select  class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                年</label>
+                <label>选择第
+                    <select  class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    期
+                </label>
+                <button type="submit" class="form-control btn">
+                    查看所有者权益
+                </button>
+            </form>
+            <div id="chart">
+
             </div>
         </div>
 
@@ -115,6 +130,7 @@
 <script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="../common/js/common.js"></script>
 <script type="text/javascript" src="../common/js/jquery-table.js"></script>
-<script type="text/javascript" src="js/approval.js"></script>
+<script type="text/javascript" src="../common/js/echarts.js"></script>
+<script type="text/javascript" src="js/right.js"></script>
 </body>
 </html>

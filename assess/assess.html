@@ -7,6 +7,23 @@
     <link rel="stylesheet" type="text/css" href="../common/css/form.css" />
     <link rel="stylesheet" type="text/css" href="../common/css/fontello.css" />
     <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
+    <style type="text/css">
+        .form-div{
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .form-div label{
+            margin-right: 14px;
+        }
+        .form-div select option{
+            color: #000;
+        }
+        #chart{
+            margin-top: 10px;
+            width: 70%;
+            height: 500px;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,20 +60,20 @@
     <div class="siderbar">
         <ul class="siderbar-ul">
             <li class="has-more">
-                <a href="#" class="active"><span class="icon-users"></span>用户管理</a>
-                <ul>
-                    <li><a href="user.html" class="active">用户列表</a></li>
-                    <li><a href="approval.html">审批用户</a></li>
+                <a href="#"><span class="icon-users"></span>用户管理</a>
+                <ul class="hide">
+                    <li><a href="../user/user.html">用户列表</a></li>
+                    <li><a href="../user/approval.html">审批用户</a></li>
                 </ul>
             </li>
             <li>
                 <a href="../group/grouplist.html"><span class="icon-gamepad"></span>管理游戏组</a>
             </li>
             <li>
-                <a href="../assess/assess.html"><span class="icon-pencil"></span>企业评价</a>
+                <a href="assess.html" class="active"><span class="icon-pencil"></span>企业评价</a>
             </li>
             <li>
-                <a href="../rights/rights.html"><span class="icon-chart-bar"></span>所有者权益</a>
+                <a href="../rights/rights.html" ><span class="icon-chart-bar"></span>所有者权益</a>
             </li>
         </ul>
     </div>
@@ -67,33 +84,46 @@
         <div class="main">
             <h1 class="content-title-style1">
                 <span class="icons-header2"></span>
-                用户列表
+                企业评价
             </h1>
-            <div id="table-area" class="clear-fix">
-                <table class="tableStyle"  id="table">
-                    <tr>
-                        <th><label><input type="checkbox" class="checkall"/>全选</label></th>
-                        <th>用户名ID</th>
-                        <th>姓名</th>
-                        <th>专业</th>
-                        <th>班级</th>
-                        <th>学号</th>
-                        <th>操作</th>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"/></td>
-                        <td>wangmin</td>
-                        <td>王敏</td>
-                        <td>电子商务</td>
-                        <td>0361102</td>
-                        <td>2011211426</td>
-                        <td>
-                            <a href="#"><span class="icon-edit"></span>修改</a>
-                            <a href="#"><span class="icon-trash-empty"></span>删除</a>
-                        </td>
-                    </tr>
-                </table>
-                <a href="#" class="form-control btn delete">批量删除</a>
+            <form class="form-div">
+                <label>
+                    <select class="form-control">
+                        <option>请选择游戏组</option>
+                        <option>haha</option>
+                        <option>hjk</option>
+                        <option>sss</option>
+                    </select>
+                </label>
+                <label>
+                    <select  class="form-control">
+                        <option>请选择年份</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                    </label>
+                <label>
+                    <select  class="form-control">
+                        <option>请选择分析模块</option>
+                        <option>广告投入产出分析</option>
+                        <option>综合市场占有率分析</option>
+                        <option>产品市场占有率分析</option>
+                        <option>成本费用占销售比利分析</option>
+                        <option>成本费用占销售比利变化分析</option>
+                        <option>产品贡献利润分析</option>
+                        <option>生产能力分析</option>
+                    </select>
+                </label>
+                <button type="submit" class="form-control btn">
+                    查看企业权益
+                </button>
+            </form>
+            <div id="chart">
+
             </div>
         </div>
 
@@ -105,6 +135,7 @@
 <script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="../common/js/common.js"></script>
 <script type="text/javascript" src="../common/js/jquery-table.js"></script>
-<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript" src="../common/js/echarts.js"></script>
+<script type="text/javascript" src="js/assess.js"></script>
 </body>
 </html>
