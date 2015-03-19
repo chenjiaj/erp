@@ -1,4 +1,166 @@
 @charset "utf-8";
+.reveal-modal {
+  z-index: 3000;
+  border-radius: 5px;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  top: -1000px;
+  left: 50%;
+  margin-left: -260px;
+  width: 520px;
+  position: absolute;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.reveal-modal-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 40;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+.ui-dialog .ui-dialog-tit {
+  font-size: 20px;
+  margin: 20px;
+}
+.reveal-modal .reveal-modal-close {
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: .5;
+  position: absolute;
+  color: #aaa;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  cursor: pointer;
+  top: 18px;
+  right: 18px;
+  color: #ccc;
+  font-size: 30px;
+}
+.dialog-body {
+  width: 100%;
+  padding: 0 20px;
+}
+.dialog-footer {
+  padding: 10px 0;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+.dialog-footer .btn {
+  margin: 0 5px;
+}
+.ui-dialog-bd {
+  padding: 20px 30px;
+  font-size: 14px;
+  color: #666;
+}
+/*表单样式*/
+.form-control {
+  height: 37px;
+  padding: 6px 12px !important;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ddd;
+  /* border-radius: 4px;*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+input {
+  line-height: normal;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+.btn {
+  display: inline-block;
+  padding: 7px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  height: 37px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #49a4de;
+  color: #fff;
+  font-family: '宋体';
+}
+.btn:hover {
+  background-color: #4BB6DE ;
+}
+/*表单验证信息*/
+.error {
+  border: 1px solid #eb7d7d;
+}
+.help-block {
+  border: 0;
+  color: red;
+  font-family: '宋体';
+  font-size: 12px;
+  margin: 10px 0  0 0;
+  display: block;
+}
+label {
+  color: #333333;
+  font-weight: 600;
+}
+.start {
+  color: #999;
+  margin-right: 8px;
+}
+.input-div {
+  margin-bottom: 18px;
+}
+.label-div {
+  min-width: 100px;
+  display: inline-block;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  height: 37px;
+  border-color: #ddd;
+  line-height: 37px;
+  text-align: right;
+  padding-right: 10px;
+  margin-right: 0;
+  float: left;
+  background-color: #f6f6f6;
+}
+.label-input {
+  float: left;
+  width: 321px;
+}
+.label-input input {
+  width: 100%;
+}
 /* CSS Document */
 * {
   margin: 0px;
@@ -184,7 +346,7 @@ body .main-wrapper .footer p {
 }
 #table-area .btn {
   position: absolute;
-  bottom: 3px;
+  bottom: 0;
   left: 100px;
 }
 .tableStyle {
@@ -222,7 +384,7 @@ body .main-wrapper .footer p {
   height: 20px;
 }
 .tableStyle td table th {
-  background-color: none;
+  background: none;
 }
 .tableStyle td span {
   color: #0066cc;
@@ -364,3 +526,146 @@ body .main-wrapper .footer p {
   height: 3px;
   background-color: #49a4de ;
 }
+.dialog-body .wrapper {
+  width: 421px;
+  margin: 0 auto;
+}
+div.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+div.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+div.warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+div.info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+div.alert-box-pop {
+  position: fixed;
+  left: 50%;
+  padding: 5px 10px;
+  font-weight: normal;
+  opacity: .9;
+  z-index: 1000;
+  font-size: 14px;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?13496339');
+  src: url('../font/fontello.eot?13496339#iefix') format('embedded-opentype'), url('../font/fontello.woff?13496339') format('woff'), url('../font/fontello.ttf?13496339') format('truetype'), url('../font/fontello.svg?13496339#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?13496339#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-cw:before {
+  content: '\e800';
+}
+/* '' */
+.icon-off:before {
+  content: '\e801';
+}
+/* '' */
+.icon-users:before {
+  content: '\e802';
+}
+/* '' */
+.icon-lock:before {
+  content: '\e803';
+}
+/* '' */
+.icon-gamepad:before {
+  content: '\e804';
+}
+/* '' */
+.icon-edit:before {
+  content: '\e805';
+}
+/* '' */
+.icon-chart-bar:before {
+  content: '\e806';
+}
+/* '' */
+.icon-minus-squared:before {
+  content: '\e807';
+}
+/* '' */
+.icon-plus-squared:before {
+  content: '\e808';
+}
+/* '' */
+.icon-trash-empty:before {
+  content: '\e809';
+}
+/* '' */
+.icon-pencil:before {
+  content: '\e80a';
+}
+/* '' */
+.icon-right-dir:before {
+  content: '\e80b';
+}
+/* '' */
+.icon-spin5:before {
+  content: '\e80c';
+}
+/* '' */
+.icon-info-circled:before {
+  content: '\e80d';
+}
+/* '' */
+.icon-cancel-circled:before {
+  content: '\e80e';
+}
+/* '' */
+.icon-ok-circled:before {
+  content: '\e80f';
+}
+/* '' */
+.icon-attention-circled:before {
+  content: '\e810';
+}
+/* '' */
