@@ -1,4 +1,4 @@
-var COM = {}
+var COM = {};
 (function(){
     var common = {
         $exit:$('.exit'),
