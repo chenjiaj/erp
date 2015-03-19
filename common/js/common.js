@@ -1,3 +1,4 @@
+var COM = {}
 (function(){
     var common = {
         $exit:$('.exit'),
@@ -16,7 +17,7 @@
             var _this = this;
             //刷新
             this.$refresh.click(function(){
-
+                window.location.reload();
             });
 
             //退出
@@ -51,7 +52,10 @@
             });
         },
         exitSystem:function(){
+            var con = confirm('是否确定退出登录？');
+            if(con){
 
+            }
         },
         modifyPass:function(){
 
