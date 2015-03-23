@@ -1,12 +1,6 @@
 {
     "code":0,
     "user":[{
-        "id":"001",
-        "name":"xiaoming",
-        "major":"电子商务",
-        "grade":"电子商务二班",
-        "stuid":"2011211444"
-    },{
         "id":"002",
         "name":"xiaoming",
         "major":"电子商务",
@@ -59,18 +53,6 @@
         },
         {
             "id":"001",
-            "name":"xiaoming",
-            "major":"电子商务",
-            "grade":"电子商务二班",
-            "stuid":"2011211444"
-        },{
-            "id":"002",
-            "name":"xiaoming",
-            "major":"电子商务",
-            "grade":"电子商务二班",
-            "stuid":"2011211444"
-        },{
-            "id":"003",
             "name":"xiaoming",
             "major":"电子商务",
             "grade":"电子商务二班",

@@ -5,12 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ERP虚拟运营系统后台管理</title>
     <link rel="stylesheet" type="text/css" href="../common/css/base.css" />
+    <style type="text/css">
+        .tableStyle td a .icon-edit{
+            vertical-align: text-top;
+        }
+    </style>
 </head>
 
 <body>
 <!--[if IE 7]>
-<div>
-    您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用设备云，请立即
+<div class="warn-brower">
+    您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
     <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
         升级IE浏览器</a>或者用更快更安全的 <a class="blue" href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" target="_blank">
     谷歌浏览器Chrome</a> 。
@@ -70,7 +75,7 @@
             <div id="table-area" class="clear-fix">
                 <table class="tableStyle"  id="table">
                     <tr>
-                        <th><label><input type="checkbox" class="checkall"/>全选</label></th>
+                        <th><label><input type="checkbox" class="check-all"/>全选</label></th>
                         <th>用户名ID</th>
                         <th>姓名</th>
                         <th>专业</th>
@@ -79,19 +84,12 @@
                         <th>操作</th>
                     </tr>
                     <tr>
-                        <td><input type="checkbox"/></td>
-                        <td>张三</td>
-                        <td>张三</td>
-                        <td>电子商务</td>
-                        <td>0361102</td>
-                        <td>2011211426</td>
-                        <td>
-                            <a href="#"><span class="icon-edit"></span>修改</a>
-                            <a href="#"><span class="icon-trash-empty"></span>删除</a>
-                        </td>
+                        <td colspan="7"><span class="icon-spin5">请稍候，数据加载中...</span></td>
                     </tr>
                 </table>
-                <a href="#" class="form-control btn delete">批量删除</a>
+               <div class="page-wrapper clear-fix">
+
+               </div>
             </div>
         </div>
 

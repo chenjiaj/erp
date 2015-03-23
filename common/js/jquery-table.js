@@ -26,6 +26,7 @@
  *   页面ul的ID是 page-ul   *   上一页ID是 prev   *   下一页ID是 next  *  当前页码信息的li的class是 page-info 页码class是 page
  *   切换每页显示的记录上的id 是 pageSelect
  * 7.表格没有数据的td的class是 has-not-data
+ * 8.如果一个页面有多个表格
  * */
 var Table = null;
 (function(){
@@ -36,7 +37,8 @@ var Table = null;
             pageCount:null,//总页数
             pageSize:10,//每页显示的记录数
             totalSize:null,//总共的记录数
-            pageUl:null,//分页的UL  $("#page-ul")
+            pageUl:null,//分页的UL  $("#page-ul") true or false
+            pageID:'page-ul',
             currPage:0,//当前页
             res:null,//表格所有的数据
             showIndex:false,//是否显示序号
@@ -50,15 +52,13 @@ var Table = null;
     Table.prototype = {
         init:function(){//初始化表格函数
             var _this = this;
-            var option = this.option;
-
             _this.bindEvent();
 
-            if(option.togglePage){
-                _this.createTogglePage();
-            }
         },
         createTogglePage:function(){//创建切换每页显示的记录数按钮
+            if(this.iscreate){
+                return;
+            }
             var _this = this;
             var option = this.option;
 
@@ -76,6 +76,7 @@ var Table = null;
                 console.log("ss");
                 _this.togglePage($(this));
             });
+            this.iscreate = true
         },
         togglePage:function(the){//切换每页显示的记录数
             var _this = this;
@@ -85,24 +86,47 @@ var Table = null;
             _this.setPage();
             _this.setTableData();
         },
-        loadData: function(url,arr){//加载数据
+        loadData: function(url,arr,fun){//加载数据
+            var _this = this;
+            $.post(url,function(res){
+                _this.successCallBack(res,arr,fun);
+            },'json').error(function(){
+                    _this.errorCallBack();
+                });;
+        },
+        successCallBack:function(res,arr,fun){
             var _this = this;
             var option = this.option;
-            $.post(url,function(res){
-                var res = res[arr];
-                option.res = res;
-                option.totalSize = res.length;
-                if(res.length>0){
+            console.log(res);
+            var res = res[arr];
+            option.res = res;
+            option.totalSize = res.length;
+            if(res.length>0){
+                if(option.togglePage){
+                    _this.createTogglePage();
+                }
+                if(!fun){
                     _this.setTableData();
                 }else{
-                    var len = option.table.find("th").length;
-                    var tr = $('<tr>' +
-                        '<td colspan="'+len+'" class="has-not-data">暂无数据</td>'+
-                        '</tr>');
-                    option.table.append(tr);
+                    fun();
                 }
-
-            });
+            }else{
+                option.table.find("tr:has(td)").remove();
+                var len = option.table.find("th").length;
+                var tr = $('<tr>' +
+                    '<td colspan="'+len+'" class="has-not-data">暂无数据</td>'+
+                    '</tr>');
+                option.table.append(tr);
+            }
+        },
+        errorCallBack:function(){
+            var option = this.option;
+            option.table.find("tr:has(td)").remove();
+            var len = option.table.find("th").length;
+            var tr = $('<tr>' +
+                '<td colspan="'+len+'" class="has-not-data">加载失败</td>'+
+                '</tr>');
+            option.table.append(tr);
         },
         setTableData:function(){//设置表格数据
             var _this = this;
@@ -149,6 +173,8 @@ var Table = null;
                 if(option.currPage == 0){
                     $("#prev").hide();
                 }
+            }else{
+                option.pageUl.remove();
             }
         },
         showPageIndex:function(){//分页页码显示
@@ -215,9 +241,9 @@ var Table = null;
         },
         createPage:function(){//创建页码UL
             var option = this.option;
-            var  ul = $('<ul id="page-ul"></ul>');
+            var  ul = $('<ul class="page-ul" id="'+option.pageID+'"></ul>');
             option.table.after(ul);
-            option.pageUl = $("#page-ul");
+            option.pageUl = $("#"+option.pageID);
         },
         prevPage:function(){//上一页
             var _this = this;

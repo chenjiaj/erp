@@ -64,36 +64,36 @@
             this.dialog.open();
         },
         createDialog:function(){
+            var _this = this;
             this.dialog = new DIALOG({
                 title: '修改密码',
-                content: '<div class="dialog-body">' +
-                    '<form class="wrapper">' +
+                content: '<div class="dialog-body" id="modifyPass-wrapper">' +
+                    '<form class="wrapper" id = "modifyPass">' +
                         '<div class="input-div clear-fix">' +
                             '<label class="label-div"><span class="start">*</span>原密码</label>' +
                             '<div class="label-input">' +
-                            '<input type="text" class="form-control" data-validation="required"' +
+                            '<input type="password" class="form-control" name = "oldpass" data-validation="required"' +
                             ' data-validation-error-msg="请输入原密码" name="type"/>' +
                             '</div>' +
                         '</div>'+
                         '<div class="input-div clear-fix">' +
                             '<label class="label-div"><span class="start">*</span>新密码</label>' +
                             '<div class="label-input">' +
-                            '<input type="password" data-validation="strength" class="form-control" data-validation-strength="1"' +
-                            'name="password"/>' +
+                            '<input type="password" name="newpass" class="form-control"/>' +
                             '</div>' +
                         '</div>'+
                         '<div class="input-div clear-fix">' +
                             '<label class="label-div"><span class="start">*</span>确认新密码</label>' +
                             '<div class="label-input">' +
-                            '<input type="password" data-validation-confirm="password" class="form-control"' +
+                            '<input type="password" data-validation-confirm="newpass" class="form-control"' +
                             'data-validation-error-msg="两次密码不一致" data-validation="confirmation"/>' +
                             '</div>' +
                         '</div>' +
                     '</form>'+
-                    '</div>'+
                     '<div class="dialog-footer">' +
-                    '<button type="button" class="btn">保存</button>' +
-                    '<button type="button" class="btn">取消</button>' +
+                    '<button type="button" class="btn save">保存</button>' +
+                    '<button type="button" class="btn cancel">取消</button>' +
+                    '</div>'+
                     '</div>',
                 beforeClose: null,
                 closeBtn: true,
@@ -102,6 +102,31 @@
                 width: '500px' //窗口宽度，默认为40%
             });
             $.validate();
+
+            var form = $('#modifyPass');
+            var wrapper = $('#modifyPass-wrapper');
+            wrapper.find('.save').click(function(){
+                var self = $(this);
+                if(!BTN.isLoading(self) && form.isValid()){
+                    BTN.addLoading(self,'保存中','loading');
+                    $.post('js/status.json',form.serialize(),function(res){
+                        BTN.removeLoading(self,'保存');
+                        if(res.code == 0){
+                            TIP('保存成功','success',2000);
+                            _this.dialog.close();
+                        }else{
+                            TIP('保存失败','error',2000);
+                        }
+                    },'json');
+                }
+            });
+
+            //取消保存
+            wrapper.find('.cancel').click(function(e){
+                e.preventDefault();
+                _this.dialog.close();
+
+            });
         }
 
     }
@@ -192,8 +217,11 @@ var DIALOG = null;
             },500);
             if(this._options.cache === false){ //设置不缓存
                 this.$root.remove();
+                this.mask.remove();
+            }else{
+                this.mask.hide();
             }
-            this.mask.hide();
+
         },
         /**
          * 设置标题
@@ -306,5 +334,59 @@ var TIP = null;
         setTimeout(function(){
             tip.hideClose(html);
         }, timeout);
+    };
+
+})();
+var BTN = null;
+(function(){
+    BTN = {
+        /**
+         * addLoading form提交的时候给按钮加上laoding图标，更改按钮文字为提交状态，给$button打上正在提交的标签
+         * @param $button 提交按钮
+         * @param buttonContent 提交按钮的innerHTML（不包含图标）
+         * @param buttonIcon 提交按钮图标 如果不传此参数则没有提交按钮。 loading：菊花按钮(目前就只有菊花按钮)
+         * */
+        addLoading: function($button, buttonContent, buttonIcon){
+            $button.data('isloading', true);
+
+            buttonContent && ($button.html(buttonContent));
+
+            if(buttonIcon){
+                var iconHtml = {
+                    'loading': '<i class="icon-spin5 animate-spin"></i>'
+                };
+                if(iconHtml[buttonIcon]){
+                    $(iconHtml[buttonIcon]).prependTo($button);
+                }
+            }
+        },
+
+        /**
+         * removeLoading form提交后取消laoding图标，更改按钮文字为默认状态，取消$button正在提交的标签
+         * @param $button 提交按钮
+         * @param buttonContent 提交按钮的innerHTML（不包含图标）
+         * @param buttonIcon 提交按钮图标 如果不传此参数则没有提交按钮。 loading：菊花按钮(目前就只有菊花按钮)
+         * */
+        removeLoading: function($button, buttonContent, buttonIcon){
+            $button.data('isloading', false);
+
+            buttonContent && ($button.html(buttonContent));
+
+            if(buttonIcon){
+                var iconHtml = {
+                    'loading': '<i class="icon-spin5 animate-spin"></i>'
+                };
+                if(iconHtml[buttonIcon]){
+                    $(iconHtml[buttonIcon]).prependTo($button);
+                }
+            }
+        },
+        /**
+         * isLoading 是否正在提交中
+         * @param $button 提交的button
+         * */
+        isLoading: function($button){
+            return $button.data('isloading');
+        }
     };
 })();

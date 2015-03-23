@@ -9,7 +9,7 @@
   left: 50%;
   margin-left: -260px;
   width: 520px;
-  position: absolute;
+  position: fixed;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -49,7 +49,8 @@
   padding: 0 20px;
 }
 .dialog-footer {
-  padding: 10px 0;
+  padding: 10px 20px;
+  margin: 0 -20px;
   background-color: #f0f0f0;
   text-align: center;
 }
@@ -341,13 +342,28 @@ body .main-wrapper .footer p {
 .hide {
   display: none;
 }
-#table-area {
-  position: relative;
+.warn-brower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  background-color: red;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
 }
-#table-area .btn {
-  position: absolute;
-  bottom: 0;
-  left: 100px;
+.warn-brower strong,
+.warn-brower a {
+  font-size: 16px;
+}
+#table-area .page-wrapper {
+  padding: 20px 0;
+  margin: -10px 600px 0 100px;
+}
+.table-area .page-wrapper {
+  padding: 20px 0;
+  margin: -10px 600px 0 100px;
 }
 .tableStyle {
   width: 100%;
@@ -408,18 +424,18 @@ body .main-wrapper .footer p {
 .tableStyle td a .icons-set {
   background: url(../img/icons.png) 0 -43px no-repeat;
 }
-#page-ul {
+.page-ul {
   text-align: center;
   margin-top: 10px;
   float: right;
 }
-#page-ul li {
+.page-ul li {
   text-align: center;
   display: inline-block;
   color: #000;
   margin: 3px;
 }
-#page-ul li a {
+.page-ul li a {
   color: #000;
   display: inline-block;
   line-height: 32px;
@@ -427,20 +443,20 @@ body .main-wrapper .footer p {
   width: 32px;
   height: 32px;
 }
-#page-ul li a:hover {
+.page-ul li a:hover {
   background-color: #49a4de;
   border: 0;
   color: #fff;
 }
-#page-ul li .prev,
-#page-ul li .next {
+.page-ul li .prev,
+.page-ul li .next {
   width: 72px;
 }
-#page-ul .active {
+.page-ul .active {
   background-color: #49a4de;
   border: 0;
 }
-#page-ul .active a {
+.page-ul .active a {
   color: #fff;
 }
 #pageSelect {
@@ -556,7 +572,7 @@ div.alert-box-pop {
   padding: 5px 10px;
   font-weight: normal;
   opacity: .9;
-  z-index: 1000;
+  z-index: 4000;
   font-size: 14px;
 }
 @font-face {
