@@ -31,13 +31,13 @@
             //批量删除
             this.$tableArea.on('click','.deletes',function(e){
                 e.preventDefault();
-                _this.detetItems();
+                _this.deteteItems();
             });
 
             //删除
             this.$table.on('click','.delete',function(e){
                 e.preventDefault();
-                _this.deletItem($(this));
+                _this.deleteItem($(this));
             });
         },
         renderPage:function(){
@@ -214,7 +214,7 @@
                 _this.dialog.close();
             });
         },
-        deletItem:function(the){
+        deleteItem:function(the){
             var _this = this;
             var tr = the.closest('tr');
             var id = tr.attr('id');
@@ -227,12 +227,17 @@
             });
 
         },
-        detetItems:function(){
+        deteteItems:function(){
             var _this = this;
             var arr=new Array();
-            this.$table.find('td :checked').each(function(index){
+            var checked = this.$table.find('td :checked');
+            if(checked.length<=0){
+                TIP('请选择用户！','warning',2000);
+                return;
+            }
+            checked.each(function(index){
                 arr[index] = $(this).closest('tr').attr('id');
-            })
+            });
             var data = {
                 id:arr
             }
@@ -246,6 +251,7 @@
                 if(res.code == 0){
                     TIP('删除成功','success',2000);
                     _this.table.loadData('js/table1.json','user');
+                    _this.$table.find('th :checkbox').prop('checked',false);
                 }else{
                     TIP('删除失败','error',2000);
                 }

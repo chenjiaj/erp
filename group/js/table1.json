@@ -1,33 +1,6 @@
 {
     "code":0,
-    "group":[{
-        "id":"001",
-        "groupname":"xiaowei",
-        "leader":"leader",
-        "num":5,
-        "year":1,
-        "quarter":3,
-        "now":"第2年第2期",
-        "items":[{
-            "mark":"001",
-            "time":"223",
-            "status":"游戏中",
-            "advertise":"已完成",
-            "order":"进行中"
-        },{
-            "mark":"002",
-            "time":"223",
-            "status":"游戏中",
-            "advertise":"已完成",
-            "order":"进行中"
-        },{
-            "mark":"003",
-            "time":"223",
-            "status":"游戏中",
-            "advertise":"已完成",
-            "order":"进行中"
-        }]
-    },
+    "group":[
         {
             "id":"001",
             "groupname":"xiaowei",

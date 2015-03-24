@@ -16,6 +16,7 @@
         init:function(){
             this.renderPage();
             this.bindEvent();
+            this.renderPageTwo();
         },
         renderPage:function(){//初始化第一页
             this.$table1.attr('data-load',true);
@@ -73,45 +74,53 @@
 
             //第一页
             //同意
-            this.$table1.on('click','.agree',function(){
-
+            this.$table1.on('click','.agree',function(e){
+                e.preventDefault();
+                _this.oprateItem($(this),'agree','1');
             });
 
             //拒绝
-            this.$table1.on('click','.refuse',function(){
-
+            this.$table1.on('click','.refuse',function(e){
+                e.preventDefault();
+                _this.oprateItem($(this),'refuse');
             });
 
             //批量同意
-            this.$tableArea1.on('click','.agree-btn',function(){
-
+            this.$tableArea1.on('click','.agree-btn',function(e){
+                e.preventDefault();
+                _this.agreeItems('1');
             });
 
             //批量拒绝
-            this.$tableArea1.on('click','.refuse-btn',function(){
-
+            this.$tableArea1.on('click','.refuse-btn',function(e){
+                e.preventDefault();
+                _this.refuseItems();
             });
 
 
 
             //第二页
-            this.$table2.on('click','.agree',function(){
-
+            this.$table2.on('click','.agree',function(e){
+                e.preventDefault();
+                _this.oprateItem($(this),'agree','2');
             });
 
             //删除
-            this.$table2.on('click','.delete',function(){
-
+            this.$table2.on('click','.delete',function(e){
+                e.preventDefault();
+                _this.oprateItem($(this),'delete');
             });
 
             //批量同意
-            this.$tableArea2.on('click','.agree-btn',function(){
-
+            this.$tableArea2.on('click','.agree-btn',function(e){
+                e.preventDefault();
+                _this.agreeItems('2');
             });
 
             //批量删除
-            this.$tableArea2.on('click','.deletes',function(){
-
+            this.$tableArea2.on('click','.deletes',function(e){
+                e.preventDefault();
+                _this.deleteItems();
             });
         },
         checkAll:function(the){
@@ -153,6 +162,164 @@
                 marginLeft:mleft
             },500);
 
+        },
+        getChecked:function(mark){
+            var table;
+            var arr = new Array();
+            switch (mark){
+                case '1':
+                    table = this.$table1;
+                    break;
+                case '2':
+                    table = this.$table2;
+                    break;
+            }
+            var checked = table.find('td :checkbox:checked');
+            if(checked.length>0){
+                checked.each(function(index){
+                    arr[index] = $(this).closest('tr').attr('id');
+                });
+                var data = {
+                    id:arr
+                }
+                return data;
+            }else{
+                return false;
+            }
+        },
+        oprateItem:function(the,oprate,mark){
+            var _this = this;
+            var tr = the.closest('tr');
+            var id = tr.attr('id');
+            var data = {
+                id:[id]
+            };
+            switch (oprate){
+                case 'agree':
+                    this.agreeFun(data,mark);
+                    break;
+                case 'delete':
+                    var name = tr.find('.name').text();
+                    DIALOG.confirm('是否删除 用户ID为'+id+'、姓名为'+name+' 的用户注册？',function(){
+                        _this.deleteFun(data);
+                    });
+                    break;
+                case 'refuse':
+                    var name = tr.find('.name').text();
+                    DIALOG.confirm('是否拒绝 用户ID为'+id+'、姓名为'+name+' 的用户注册？',function(){
+                        _this.refuseFun(data);
+                    });
+                    break;
+            }
+
+        },
+        agreeItems:function(mark){//批量同意
+            var _this = this;
+            var data = this.getChecked(mark);
+            if(!data){
+                TIP('请选择要同意的用户！','warning',2000);
+                return;
+            }
+            this.agreeFun(data,mark);
+        },
+        agreeFun:function(data,mark){
+            var _this = this;
+            switch (mark){
+                case '1':
+                    $.post('js/status.json',data,function(res){
+                        if(res.code == 0){
+                            TIP('操作成功！','success',2000);
+                            _this.waitTable.loadData('js/table1.json','user');
+                            _this.$table1.find('th :checkbox').prop('checked',false);
+                        }else{
+                            TIP('操作失败！','error',2000);
+                        }
+                    },'json');
+                    break;
+                case '2':
+                    $.post('js/status.json',data,function(res){
+                        if(res.code == 0){
+                            TIP('操作成功！','success',2000);
+                            _this.refuseTable.loadData('js/table1.json','user',function(){
+                                _this.setTableTwo();
+                                _this.$table2.find('th :checkbox').prop('checked',false);
+                            });
+                            _this.$table1.find('th :checkbox').prop('checked',false);
+                        }else{
+                            TIP('操作失败！','error',2000);
+                        }
+                    },'json');
+                    break;
+                default:
+                    window.location.reload();
+            }
+
+        },
+        refuseFun:function(data){
+            var _this = this;
+            $.post('js/status.json',data,function(res){
+                if(res.code == 0){
+                    TIP('操作成功！','success',2000);
+                    _this.waitTable.loadData('js/table1.json','user');
+                    _this.refuseTable.loadData('js/table1.json','user',function(){
+                        _this.setTableTwo();
+                    });
+                    $('th :checkbox').prop('checked',false);
+                }else{
+                    TIP('操作失败！','error',2000);
+                }
+            },'json');
+        },
+        refuseItems:function(){//批量拒绝
+            var _this = this;
+            var arr = new Array();
+            var checked = this.$table1.find('td :checkbox:checked');
+            if(checked.length>0){
+                DIALOG.confirm('是否拒绝所选用户注册？',function(){
+                    checked.each(function(index){
+                        arr[index] = $(this).closest('tr').attr('id');
+                    });
+                    var data = {
+                        id:arr
+                    }
+                    _this.refuseFun(data);
+                });
+            }else{
+                TIP('请选择要拒绝的用户！','warning',2000);
+            }
+
+        },
+        deleteFun:function(data){
+            var _this = this;
+            $.post('js/status.json',data,function(res){
+                if(res.code == 0){
+                    TIP('删除成功！','success',2000);
+                    _this.refuseTable.loadData('js/table1.json','user',function(){
+                        _this.setTableTwo();
+                        _this.$table2.find('th :checkbox').prop('checked',false);
+                    });
+                }else{
+                    TIP('删除失败！','error',2000);
+                }
+            },'json');
+        },
+        deleteItems:function(){
+            var _this = this;
+            var arr = new Array();
+            var checked = this.$table2.find('td :checkbox:checked');
+            if(checked.length>0){
+                DIALOG.confirm('是否删除所选用户注册？',function(){
+                    checked.each(function(index){
+                        arr[index] = $(this).closest('tr').attr('id');
+                    });
+                    var data = {
+                        id:arr
+                    }
+                    _this.deleteFun(data);
+                });
+            }else{
+                TIP('请选择要删除的用户！','warning',2000);
+            }
         },
         renderPageTwo:function(){
             this.$table2.attr('data-load',true);

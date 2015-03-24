@@ -26,7 +26,8 @@
  *   页面ul的ID是 page-ul   *   上一页ID是 prev   *   下一页ID是 next  *  当前页码信息的li的class是 page-info 页码class是 page
  *   切换每页显示的记录上的id 是 pageSelect
  * 7.表格没有数据的td的class是 has-not-data
- * 8.如果一个页面有多个表格
+ * 8.如果一个页面有多个表格，setTableData函数可以通过loadData传递过来 loadData: function(url,arr,fun)
+ * 9.如果一个页面有多个表格，ul需要传递一个ID在创建对象的时候
  * */
 var Table = null;
 (function(){
@@ -88,7 +89,7 @@ var Table = null;
         },
         loadData: function(url,arr,fun){//加载数据
             var _this = this;
-            $.post(url,function(res){
+            $.get(url,function(res){
                 _this.successCallBack(res,arr,fun);
             },'json').error(function(){
                     _this.errorCallBack();
@@ -174,7 +175,9 @@ var Table = null;
                     $("#prev").hide();
                 }
             }else{
-                option.pageUl.remove();
+                if(option.pageUl){
+                    option.pageUl.remove();
+                }
             }
         },
         showPageIndex:function(){//分页页码显示

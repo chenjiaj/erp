@@ -19,13 +19,12 @@
         #chart{
             margin-top: 10px;
             width: 95%;
-            height: 500px;
         }
     </style>
 </head>
 
 <body>
-<!--[if IE 7]>
+<!--[if lt IE 9]>
 <div class="warn-brower">
     您正在使用的虚拟运营系统<strong>不支持</strong>IE低级浏览器，为了更好的试用ERP虚拟运营系统，请立即
     <a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
@@ -84,39 +83,23 @@
                 <span class="icons-header2"></span>
                 企业评价
             </h1>
-            <form class="form-div">
+            <form class="form-div" id="chooseItem">
                 <label>
-                    <select class="form-control">
-                        <option>请选择游戏组</option>
-                        <option>haha</option>
-                        <option>hjk</option>
-                        <option>sss</option>
+                    <select class="form-control selete-group" name="group">
+                        <option value="null">请选择游戏组</option>
                     </select>
                 </label>
                 <label>
-                    <select  class="form-control">
-                        <option>请选择年份</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
+                    <select  class="form-control selete-year" name="year">
+                        <option value="null">请选择年份</option>
                     </select>
                     </label>
                 <label>
-                    <select  class="form-control">
-                        <option>请选择分析模块</option>
-                        <option>广告投入产出分析</option>
-                        <option>综合市场占有率分析</option>
-                        <option>产品市场占有率分析</option>
-                        <option>成本费用占销售比利分析</option>
-                        <option>成本费用占销售比利变化分析</option>
-                        <option>产品贡献利润分析</option>
-                        <option>生产能力分析</option>
+                    <select  class="form-control selete-item" name="item">
+                        <option value="null">请选择分析模块</option>
                     </select>
                 </label>
-                <button type="submit" class="form-control btn">
+                <button type="button" class="form-control btn search">
                     查看企业权益
                 </button>
             </form>

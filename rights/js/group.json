@@ -1,0 +1,16 @@
+{
+    "code":0,
+    "grouplist":[{
+        "id":0,
+        "name":"haha",
+        "num":"5"
+    },{
+        "id":1,
+        "name":"xiaowei",
+        "num":"6"
+    },{
+        "id":2,
+        "name":"huihui",
+        "num":"4"
+    }]
+}
