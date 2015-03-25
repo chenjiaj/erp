@@ -177,6 +177,7 @@ var Table = null;
             }else{
                 if(option.pageUl){
                     option.pageUl.remove();
+                    option.pageUl= null;
                 }
             }
         },
