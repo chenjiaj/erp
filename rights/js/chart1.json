@@ -9,41 +9,41 @@
                 "interestRate" : 0.0,
                 "ownerBenifit" : 47.0,
                 "totalAssestsIncomeRate" : 0.0,
-                "userId" : null,
-                "userUnique" : null
+                "userId" : "wangguozhu",
+                "userUnique" : "wangguozhu20140414202304"
             },
             {
                 "assestsIncomeRate" : 0.0,
                 "businessProfitRate" : 0.0,
-                "currentPeriod" : 2,
+                "currentPeriod" : 1,
                 "groupName" : null,
                 "interestRate" : 0.0,
-                "ownerBenifit" : 42.0,
+                "ownerBenifit" : 38.75,
                 "totalAssestsIncomeRate" : 0.0,
-                "userId" : null,
-                "userUnique" : null
+                "userId" : "liyangyang",
+                "userUnique" : "liyangyang20140414202304"
             },
             {
                 "assestsIncomeRate" : 0.0,
                 "businessProfitRate" : 0.0,
-                "currentPeriod" : 3,
+                "currentPeriod" : 1,
                 "groupName" : null,
                 "interestRate" : 0.0,
-                "ownerBenifit" : 37.0,
+                "ownerBenifit" : 39.54999923706055,
                 "totalAssestsIncomeRate" : 0.0,
-                "userId" : null,
-                "userUnique" : null
+                "userId" : "fengpeng",
+                "userUnique" : "fengpeng20140414202304"
             },
             {
                 "assestsIncomeRate" : 0.0,
                 "businessProfitRate" : 0.0,
-                "currentPeriod" : 4,
+                "currentPeriod" : 1,
                 "groupName" : null,
                 "interestRate" : 0.0,
-                "ownerBenifit" : 32.0,
+                "ownerBenifit" : 40.25,
                 "totalAssestsIncomeRate" : 0.0,
-                "userId" : null,
-                "userUnique" : null
+                "userId" : "mahaoran",
+                "userUnique" : "mahaoran20140414202304"
             }
         ],
     "code" : 0

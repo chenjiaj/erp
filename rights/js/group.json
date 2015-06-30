@@ -1,16 +1,40 @@
 {
-    "code":0,
-    "grouplist":[{
-        "id":0,
-        "name":"haha",
-        "num":"5"
-    },{
-        "id":1,
-        "name":"xiaowei",
-        "num":"6"
-    },{
-        "id":2,
-        "name":"huihui",
-        "num":"4"
-    }]
+    "code" : 0,
+    "allGroupMembers" :
+        [
+            {
+                "groupNames" : "1",
+                "members" :
+                    [
+                        {
+                            "userID":"acv",
+                            "userunique":"manager20140423234231"
+                        },
+                        {
+                            "userID":"acv",
+                            "userunique":"manager20140423234231"
+                        }
+                    ],
+                "year":4
+            },
+            {
+                "groupNames" : "2222",
+                "members" :
+                    [
+                        {
+                            "userID":"acv",
+                            "userunique":"manager20140423234231"
+                        },
+                        {
+                            "userID":"acv",
+                            "userunique":"manager20140423234231"
+                        },
+                        {
+                            "userID":"acv",
+                            "userunique":"manager20140423234231"
+                        }
+                    ],
+                "year":4
+            }
+        ]
 }

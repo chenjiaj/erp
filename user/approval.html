@@ -62,7 +62,7 @@
         <li><a href="#" title="退出登录" class="exit"><span class="icon-off"></span>退出登录</a></li>
         <li class="user-info">
             <img src="../common/img/pic_meb3.jpg" title="头像" class="photo"/>
-            <span>你好,admin!</span>
+            <span class="username">你好!</span>
         </li>
     </ul>
 </div>
@@ -96,10 +96,10 @@
     <!--main-wrapper-->
     <div class="main-wrapper">
         <div class="main">
-            <ul class="tab clear-fix">
-                <li class="active"><span class="line"></span>待审批</li>
-                <li><span class="line"></span>未通过</li>
-            </ul>
+            <h1 class="content-title-style1">
+                <span class="icons-header2"></span>
+                待审批用户
+            </h1>
             <div class="toggle-mask">
                 <div class="toggle-wrapper clear-fix">
                     <div class="toggle-div" id="wait">
@@ -124,27 +124,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="toggle-div" id="refuse">
-                        <div id="table-area2" class="clear-fix table-area">
-                            <table class="tableStyle"  id="table2">
-                                <tr>
-                                    <th><label><input type="checkbox" class="check-all"/>全选</label></th>
-                                    <th>用户名ID</th>
-                                    <th>姓名</th>
-                                    <th>专业</th>
-                                    <th>班级</th>
-                                    <th>学号</th>
-                                    <th>操作</th>
-                                </tr>
-                                <tr>
-                                    <td colspan="7"><span class="icon-spin5">请稍候，数据加载中...</span></td>
-                                </tr>
-                            </table>
-                            <div class="page-wrapper">
-                                <a href="#" class="form-control btn agree-btn">同意</a>
-                                <a href="#" class="form-control btn deletes">删除</a>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
@@ -153,7 +133,6 @@
             <!--toggle-mask end-->
         </div>
         <!--main end-->
-        <div class="footer"><p>版权</p></div>
 
     </div>
     <!--main-wrapper end-->

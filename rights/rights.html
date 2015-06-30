@@ -20,6 +20,17 @@
             margin-top: 10px;
             width: 95%;
         }
+        .toggle-mask{
+            width: 100%;
+            overflow: hidden;
+        }
+        .toggle-wrapper{
+            width: 200%;
+        }
+        .toggle-div{
+            width: 50%;
+            float: left;
+        }
     </style>
 </head>
 
@@ -45,7 +56,7 @@
         <li><a href="#" title="退出登录" class="exit"><span class="icon-off"></span>退出登录</a></li>
         <li class="user-info">
             <img src="../common/img/pic_meb3.jpg" title="头像" class="photo"/>
-            <span>你好,admin!</span>
+            <span class="username">你好!</span>
         </li>
     </ul>
 </div>
@@ -79,32 +90,71 @@
     <!--main-wrapper-->
     <div class="main-wrapper">
         <div class="main">
-            <h1 class="content-title-style1">
-                <span class="icons-header2"></span>
-                所有者权利
-            </h1>
-            <form class="form-div" id="chooseItem">
-                <label>
-                    <select class="form-control selete-group" name="group">
-                        <option value="null">请选择游戏组</option>
-                    </select>
-                </label>
-                <label>
-                    <select  class="form-control selete-year" name="year">
-                        <option value="null">请选择年份</option>
-                    </select>
-                </label>
+            <ul class="tab clear-fix">
+                <li class="active"><span class="line"></span>按小组查看</li>
+                <li><span class="line"></span>按游戏组查看</li>
+            </ul>
+            <div class="toggle-mask">
+                <div class="toggle-wrapper clear-fix">
+                    <div class="toggle-div" id="wait">
+                        <form class="form-div" id="chooseItem"style="padding-left:20px;">
+                            <label>
+                                <select class="form-control selete-group" name="group">
+                                    <option value="null">请选择游戏组</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-item" name="item">
+                                    <option value="null">请选择小组</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-year" name="year">
+                                    <option value="null">请选择年份</option>
+                                </select>
+                            </label>
 
-                <button type="button" class="form-control btn search">
-                    查看所有者权益
-                </button>
-            </form>
-            <div id="chart">
+                            <button type="button" class="form-control btn search1">
+                                查看所有者权益
+                            </button>
+                        </form>
+                        <div id="chart">
 
+                        </div>
+                    </div>
+                    <div class="toggle-div" id="refuse">
+                        <form class="form-div" id="chooseItem1" style="padding-left:20px;">
+                            <label>
+                                <select class="form-control selete-group1" name="group1">
+                                    <option value="null">请选择游戏组</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-year1" name="year1">
+                                    <option value="null">请选择年份</option>
+                                </select>
+                            </label>
+                            <label>
+                                <select  class="form-control selete-period1" name="year1">
+                                    <option value="null">请选择周期</option>
+                                </select>
+                            </label>
+                            <button type="button" class="form-control btn search2">
+                                查看所有者权益
+                            </button>
+                        </form>
+                        <div id="chart1">
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--toggle-wrapper end-->
             </div>
+            <!--toggle-mask end-->
+
         </div>
 
-        <div class="footer"><p>版权</p></div>
     </div>
     <!--main-wrapper end-->
 </div>

@@ -63,13 +63,13 @@ var Table = null;
             var _this = this;
             var option = this.option;
 
-            var select = $('<select id = "pageSelect" class="form-control">' +
+            var select = $('<span style="float: left;line-height: 53px">本页显示&nbsp;</span><select id = "pageSelect" class="form-control">' +
                 '<option value="10">10</option>'+
                 '<option value="20">20</option>'+
                 '<option value="40">40</option>'+
                 '<option value="50">50</option>'+
                 '<option value="100">100</option>'+
-                '</select>');
+                '</select><span style="float: left;line-height: 53px">&nbsp;条记录数</span>');
 
             option.table.after(select);
 

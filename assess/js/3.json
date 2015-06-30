@@ -1,0 +1,150 @@
+{
+    "memberSaleOfProducts" :
+        [
+            {
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "productName" : "P1",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "productName" : "P1",
+                "sale" : 14.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "productName" : "P1",
+                "sale" : 9.5
+            },
+            {
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "productName" : "P1",
+                "sale" : 18.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "productName" : "P2",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "productName" : "P2",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "productName" : "P2",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "productName" : "P2",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "productName" : "P3",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "productName" : "P3",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "productName" : "P3",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "productName" : "P3",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "productName" : "P4",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "productName" : "P4",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "productName" : "P4",
+                "sale" : 0.0
+            },
+            {
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "productName" : "P4",
+                "sale" : 0.0
+            }
+        ],
+    "code" : 0
+}

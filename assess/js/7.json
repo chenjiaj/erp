@@ -1,0 +1,42 @@
+{
+    "code" : 0,
+    "produceCapacities" :
+        [
+            {
+                "capacity" : 0.0,
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "producePeriod" : 0
+            },
+            {
+                "capacity" : 1.0,
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "producePeriod" : 0
+            },
+            {
+                "capacity" : 4.0,
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "producePeriod" : 0
+            },
+            {
+                "capacity" : 2.0,
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "producePeriod" : 0
+            }
+        ]
+}

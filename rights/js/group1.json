@@ -1,0 +1,48 @@
+{
+    "GameGroups" :
+        [
+            {
+                "atuoYearFresh" : 0,
+                "autoPeriodFresh" : 0,
+                "currentPeriod" : 0,
+                "enableAutoPeriodFresh" : null,
+                "enableAutoYearFresh" : null,
+                "groupCreaterId" : "jyc",
+                "groupName" : "drr12",
+                "joinNumber" : 0,
+                "periodsOfOneYear" : 5,
+                "remandNumber" : 0,
+                "userNumbers" : 4,
+                "years" : 3
+            },
+            {
+                "atuoYearFresh" : 0,
+                "autoPeriodFresh" : 0,
+                "currentPeriod" : 1,
+                "enableAutoPeriodFresh" : null,
+                "enableAutoYearFresh" : null,
+                "groupCreaterId" : "123",
+                "groupName" : "5",
+                "joinNumber" : 0,
+                "periodsOfOneYear" : 6,
+                "remandNumber" : 0,
+                "userNumbers" : 3,
+                "years" : 5
+            },
+            {
+                "atuoYearFresh" : 0,
+                "autoPeriodFresh" : 0,
+                "currentPeriod" : 0,
+                "enableAutoPeriodFresh" : null,
+                "enableAutoYearFresh" : null,
+                "groupCreaterId" : "123",
+                "groupName" : "4",
+                "joinNumber" : 0,
+                "periodsOfOneYear" : 1,
+                "remandNumber" : 0,
+                "userNumbers" : 3,
+                "years" : 5
+            }
+        ],
+    "code" : 0
+}

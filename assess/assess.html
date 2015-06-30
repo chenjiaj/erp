@@ -45,7 +45,7 @@
         <li><a href="#" title="退出登录" class="exit"><span class="icon-off"></span>退出登录</a></li>
         <li class="user-info">
             <img src="../common/img/pic_meb3.jpg" title="头像" class="photo"/>
-            <span>你好,admin!</span>
+            <span class="username">你好!</span>
         </li>
     </ul>
 </div>
@@ -84,21 +84,36 @@
                 企业评价
             </h1>
             <form class="form-div" id="chooseItem">
-                <label>
-                    <select class="form-control selete-group" name="group">
-                        <option value="null">请选择游戏组</option>
-                    </select>
-                </label>
-                <label>
-                    <select  class="form-control selete-year" name="year">
-                        <option value="null">请选择年份</option>
-                    </select>
+                <div style="display: inline-block" class="select-wrapper">
+                    <label>
+                        <select  class="form-control selete-item" name="item">
+                            <option value="null">请选择分析模块</option>
+                            <option value="1">广告投入产出分析</option>
+                            <option value="2">综合市场占有率分析</option>
+                            <option value="3">产品市场占有率分析</option>
+                            <option value="4">成本费用占销售比例分析</option>
+                            <option value="5">成本费用占销售比例变化分析</option>
+                            <option value="6">产品贡献利润分析</option>
+                            <option value="7">生产能力分析</option>
+                        </select>
                     </label>
-                <label>
-                    <select  class="form-control selete-item" name="item">
-                        <option value="null">请选择分析模块</option>
-                    </select>
-                </label>
+                    <label>
+                        <select class="form-control selete-group" name="group">
+                            <option value="null">请选择游戏组</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select  class="form-control selete-groupitem" name="year">
+                            <option value="null">请选择小组</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select  class="form-control selete-year" name="year">
+                            <option value="null">请选择年份</option>
+                        </select>
+                    </label>
+
+                </div>
                 <button type="button" class="form-control btn search">
                     查看企业权益
                 </button>
@@ -107,8 +122,6 @@
 
             </div>
         </div>
-
-        <div class="footer"><p>版权</p></div>
     </div>
     <!--main-wrapper end-->
 </div>
@@ -116,7 +129,6 @@
 <script type="text/javascript" src="../common/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="../common/js/jquery.form-validator.js"></script>
 <script type="text/javascript" src="../common/js/common.js"></script>
-<script type="text/javascript" src="../common/js/jquery-table.js"></script>
 <script type="text/javascript" src="../common/js/echarts.js"></script>
 <script type="text/javascript" src="js/assess.js"></script>
 </body>

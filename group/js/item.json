@@ -4,21 +4,21 @@
         [
             {
                 "chooseOrderFlag" : 0,
-                "currentPeriod" : 4,
-                "finishAdFlag" : 0,
-                "finishOrderFlag" : 0,
+                "currentPeriod" : 9,
+                "finishAdFlag" : 1,
+                "finishOrderFlag" : 1,
                 "groupName" : "ABC",
                 "periodsOfOneYear" : 4,
                 "season" : null,
-                "status" : 0,
+                "status" : 1,
                 "userName" : null,
                 "userUnique" : "littlemoon20140314141601",
-                "year" : 3
+                "year" : null
             },
             {
                 "chooseOrderFlag" : 1,
                 "currentPeriod" : 6,
-                "finishAdFlag" : null,
+                "finishAdFlag" : 1,
                 "finishOrderFlag" : 1,
                 "groupName" : "ABC",
                 "periodsOfOneYear" : 4,
@@ -26,7 +26,7 @@
                 "status" : 1,
                 "userName" : null,
                 "userUnique" : "sister20140314141601",
-                "year" : 3
+                "year" : null
             }
         ]
 }

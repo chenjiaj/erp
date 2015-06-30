@@ -49,6 +49,7 @@
                 showIndexContent:'编号'
             });
             this.extendFun();
+            //this.table.loadData('/UserManagerAction!findAllApprovedUser.action','user');
             this.table.loadData('js/table.json','user');
             this.$btnWrapper.append('<a href="#" class="form-control btn deletes">批量删除</a>');
         },
@@ -63,15 +64,15 @@
                     option.table.find("tr:has(td)").remove();
                     for(var i = curr*option.pageSize; i<res.length && i<option.pageSize + curr*option.pageSize ; i++){
                         var trdata = res[i];
-                        var tr = "<tr id='"+trdata.id+"'>";
+                        var tr = "<tr id='"+trdata.userID+"'>";
                         tr += '<td>'+
                             '<input type="checkbox"/>'+
                             '</td>' +
-                            '<td class="id">'+trdata.id+'</td>' +
+                            '<td class="id">'+trdata.userID+'</td>' +
                             '<td class="name">'+trdata.name+'</td>' +
                             '<td class="major">'+trdata.major+'</td>' +
-                            '<td class="grade">'+trdata.grade+'</td>' +
-                            '<td class="stuid">'+trdata.stuid+'</td>';
+                            '<td class="grade">'+trdata.className+'</td>' +
+                            '<td class="stuid">'+trdata.studentID+'</td>';
 
                         tr += '<td>'+
                             '<a href="#" class="edit"><span class="icon-edit"></span>修改</a>'+
@@ -186,9 +187,16 @@
                     var newMajor = form.find('.major').val();
                     var newGrade = form.find('.grade').val();
                     var newStuid = form.find('.stuid').val();
+                    var data = {
+                        userID:id, //用户的ID
+                        name:newName,//用户的姓名
+                        major:newMajor,//专业
+                        className:newGrade,//班级
+                        approvedUserInfo:newStuid//学号
+                    }
                     if(!BTN.isLoading($('.save')) && form.isValid()){
                         BTN.addLoading($('.save'),'保存中','loading');
-                        $.post('js/delete.json',form.serialize(),function(res){
+                        $.post('js/status.json',data,function(res){///UserManagerAction!updateApprovedUserInfo.action
                             BTN.removeLoading($('.save'),'保存');
                             if(res.code == 0){
                                 TIP('保存成功','success',2000);
@@ -220,7 +228,7 @@
             var id = tr.attr('id');
             var name = tr.find('.name').text();
             var data = {
-                id:[id]
+                userIds:[id]
             }
             DIALOG.confirm('是否删除 ID为'+id+'、用户名为'+name+' 的用户？',function(){
                 _this.deleteFun(data)
@@ -239,7 +247,7 @@
                 arr[index] = $(this).closest('tr').attr('id');
             });
             var data = {
-                id:arr
+                userIds:arr
             }
             DIALOG.confirm('是否删除所有选中用户？',function(){
                 _this.deleteFun(data)
@@ -247,10 +255,10 @@
         },
         deleteFun:function(data){
             var _this = this;
-            $.post('js/delete.json',data,function(res){
+            $.post('js/status.json',data,function(res){// /UserManagerAction!deleteBatchApprUsers.actionn
                 if(res.code == 0){
                     TIP('删除成功','success',2000);
-                    _this.table.loadData('js/table1.json','user');
+                    _this.table.loadData('js/table1.json','user');// /UserManagerAction!findAllApprovedUser.action
                     _this.$table.find('th :checkbox').prop('checked',false);
                 }else{
                     TIP('删除失败','error',2000);
@@ -259,5 +267,4 @@
         }
     }
     user.init();
-
 })();

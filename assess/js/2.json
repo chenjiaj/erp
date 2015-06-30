@@ -1,0 +1,186 @@
+{
+    "memberSaleOfMarkets" :
+        [
+            {
+                "marketname" : "本地市场",
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "本地市场",
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "sale" : 14.0
+            },
+            {
+                "marketname" : "本地市场",
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "sale" : 9.5
+            },
+            {
+                "marketname" : "本地市场",
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "sale" : 18.0
+            },
+            {
+                "marketname" : "区域市场",
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "区域市场",
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "区域市场",
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "区域市场",
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国内市场",
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国内市场",
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国内市场",
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国内市场",
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "亚洲市场",
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "亚洲市场",
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "亚洲市场",
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "sale" : 3.0
+            },
+            {
+                "marketname" : "亚洲市场",
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国际市场",
+                "member" :
+                {
+                    "userID" : "wangguozhu",
+                    "userunique" : "wangguozhu20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国际市场",
+                "member" :
+                {
+                    "userID" : "liyangyang",
+                    "userunique" : "liyangyang20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国际市场",
+                "member" :
+                {
+                    "userID" : "fengpeng",
+                    "userunique" : "fengpeng20140414202304"
+                },
+                "sale" : 0.0
+            },
+            {
+                "marketname" : "国际市场",
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "sale" : 1.0
+            }
+        ],
+    "code" : 0
+}

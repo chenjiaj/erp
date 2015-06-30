@@ -1,0 +1,22 @@
+{
+    "userIORates" :
+        [
+            {
+                "username" : "wangguozhu",
+                "rate" : 0.0
+            },
+            {
+                "username" : "liyangyang",
+                "rate" : 4.666666666666667
+            },
+            {
+                "username" : "fengpeng",
+                "rate" : 3.1666666666666665
+            },
+            {
+                "username" : "mahaoran",
+                "rate" : 4.5
+            }
+        ],
+    "code" : 0
+}

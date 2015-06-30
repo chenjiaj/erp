@@ -1,0 +1,54 @@
+{
+    "productProfits" :
+        [
+            {
+                "cost" : 2.0,
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "pnumber" : null,
+                "price" : 0.0,
+                "productname" : "P1",
+                "sale" : 18.0
+            },
+            {
+                "cost" : 0.0,
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "pnumber" : null,
+                "price" : 0.0,
+                "productname" : "P2",
+                "sale" : 0.0
+            },
+            {
+                "cost" : 0.0,
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "pnumber" : null,
+                "price" : 0.0,
+                "productname" : "P3",
+                "sale" : 0.0
+            },
+            {
+                "cost" : 0.0,
+                "member" :
+                {
+                    "userID" : "mahaoran",
+                    "userunique" : "mahaoran20140414202304"
+                },
+                "pnumber" : null,
+                "price" : 0.0,
+                "productname" : "P4",
+                "sale" : 0.0
+            }
+        ],
+    "code" : 0
+}

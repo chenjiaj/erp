@@ -5,12 +5,22 @@
         $modifyPass:$('.j_modifypass'),
         $siderbarBg:$('.siderbar-ul'),
         $li:$('.has-more'),
+        $username:$('.username'),
         init:function(){
             this.bindEvent();
             this.initPage();
         },
         initPage:function(){//静态初始化页面
+            var _this = this;
             this.$siderbarBg.height(screen.height);
+
+            //获取当前用户信息
+            $.post('../common/js/admin.json',function(res){// /AdminOperateAction!adminUserLogin.action
+                if(res.code == 0){
+                    _this.username = res.adminUserName;
+                    _this.$username.html("你好,"+_this.username+"!");
+                }
+            },'json');
         },
         bindEvent:function(){
             var _this = this;
@@ -51,10 +61,17 @@
             });
         },
         exitSystem:function(){
+            var _this = this;
             DIALOG.confirm('确定退出？',function(){
-                console.log('true');
-            },function(){
-                console.log('false');
+                $.post('js/status.json',{
+                    username:_this.username
+                },function(res){
+                    if(res.code == 0){
+                        window.location.href = res.url;
+                    }else{
+                        TIP('退出失败！','error',2000);
+                    }
+                });
             });
         },
         modifyPass:function(){
@@ -69,17 +86,18 @@
                 title: '修改密码',
                 content: '<div class="dialog-body" id="modifyPass-wrapper">' +
                     '<form class="wrapper" id = "modifyPass">' +
+                        '<input type="hidden" value="'+_this.username+'" name="adminID">'+
                         '<div class="input-div clear-fix">' +
                             '<label class="label-div"><span class="start">*</span>原密码</label>' +
                             '<div class="label-input">' +
-                            '<input type="password" class="form-control" name = "oldpass" data-validation="required"' +
+                            '<input type="password" class="form-control" name = "oldPWD" data-validation="required"' +
                             ' data-validation-error-msg="请输入原密码" name="type"/>' +
                             '</div>' +
                         '</div>'+
                         '<div class="input-div clear-fix">' +
                             '<label class="label-div"><span class="start">*</span>新密码</label>' +
                             '<div class="label-input">' +
-                            '<input type="password" name="newpass" class="form-control"/>' +
+                            '<input type="password" name="newPWD" class="form-control"/>' +
                             '</div>' +
                         '</div>'+
                         '<div class="input-div clear-fix">' +
@@ -109,7 +127,7 @@
                 var self = $(this);
                 if(!BTN.isLoading(self) && form.isValid()){
                     BTN.addLoading(self,'保存中','loading');
-                    $.post('js/status.json',form.serialize(),function(res){
+                    $.post('/AdminOperateAction!updatePWD.action',form.serialize(),function(res){
                         BTN.removeLoading(self,'保存');
                         if(res.code == 0){
                             TIP('保存成功','success',2000);
@@ -310,7 +328,7 @@ var TIP = null;
             var scroll = $(window).height() / 2;
             obj.css({
                 'margin-left':-width/2-45/2,
-                'top': -height/2+scroll+15,
+                'top': -height/2+scroll,
                 position: 'fixed',
                 left: '50%'
             });
